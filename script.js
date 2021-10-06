@@ -2,15 +2,15 @@ const bigButton = document.getElementsByClassName("big-five-button")
 
 const addItem = event => {
     let target = event.target.innerHTML
-    console.log('Er wordt geklikt op:', target)
+    // console.log('Er wordt geklikt op:', target)
     
     const newEle = document.createElement("li");
     newEle.innerHTML = target
     newEle.className = "spotted-animals-list-item"
-    console.log('Created new element:', newEle)
+    // console.log('Created new element:', newEle)
 
     const parentEle = document.getElementById('spotted-animals-list');
-    console.log('Parent:', parentEle)
+    // console.log('Parent:', parentEle)
     parentEle.appendChild(newEle); 
 }
 
@@ -27,9 +27,10 @@ removeFirstBtn.addEventListener('click', removeFirst)
 
 const removeAllBtn = document.getElementById('remove-all-button')
 const removeAll = () => {
+    // Sneller, maar de opdracht vraagt om het via de parent te doen:
     // let allItems = document.querySelectorAll('.spotted-animals-list-item')
     // allItems.forEach(x => x.remove())
     let allItemsParent = document.getElementById('spotted-animals-list')
-    allItemsParent.querySelectorAll('li').forEach(element => element.remove())
+    allItemsParent.querySelectorAll('li').forEach(x => x.remove())
 }
 removeAllBtn.addEventListener('click', removeAll)
